@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: pt-servicemonitor
+  namespace: pt-app
+  labels:
+    release: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: pt
+  namespaceSelector:
+    matchNames:
+      - pt-app
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 10s
+

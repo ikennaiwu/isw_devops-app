@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pt-service
+  namespace: pt-app
+spec:
+  selector:
+    app: pt
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: ClusterIP
