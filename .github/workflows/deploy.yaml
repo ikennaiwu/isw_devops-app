@@ -25,6 +25,6 @@ jobs:
 
     - name: Deploy to K3s
       run: |
-        kubectl apply -f k8s/namespace.yaml
+        kubectl apply -f k8s/namespace.yaml --validate=false
         kubectl apply -f k8s/
 
